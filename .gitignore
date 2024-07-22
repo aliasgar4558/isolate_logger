@@ -1,0 +1,15 @@
+.dart_tool/
+.idea/
+.pub-cache/
+.pub/
+build/
+coverage/
+app-support-dir/
+temp-dir/
+
+.DS_Store
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+isolate_logger.iml
+pubspec.lock
