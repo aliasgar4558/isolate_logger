@@ -14,9 +14,7 @@ Future<void> logIntoFileViaIsolate(
   final isolateReceivePort = ReceivePort();
   payload.mainSendPort.send(isolateReceivePort.sendPort);
 
-  BackgroundIsolateBinaryMessenger.ensureInitialized(
-    payload.isolateToken,
-  );
+  BackgroundIsolateBinaryMessenger.ensureInitialized(payload.isolateToken);
 
   // listening to all data streamed from main thread, via isolate's send port
   isolateReceivePort.listen((dataFromMain) async {

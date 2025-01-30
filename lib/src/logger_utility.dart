@@ -39,18 +39,6 @@ class LoggerUtility {
   }) : _logService = logService;
 
   /// Initializes the logger with specified configuration options.
-  ///
-  /// The `initLogger` method configures the logger with specific options such as
-  /// log time format, console log preference, file log preference, system crash
-  /// logging, and log file name prefix.
-  ///
-  /// - Parameters:
-  ///   - timeFormat: The format for logging timestamps. Default is [LogTimeFormat.timestamp].
-  ///   - wantConsoleLog: Flag indicating whether to log messages to the console. Default is `true`.
-  ///   - logIntoFile: Flag indicating whether to log messages into a file. Default is `true`.
-  ///   - logSystemCrashes: Flag indicating whether to log system crashes. Default is `true`.
-  ///   - logFileNamePrefix: Prefix for the log file name. Default is [kDefaultLogFileNamePrefix].
-  ///
   void initLogger({
     LogTimeFormat timeFormat = LogTimeFormat.timestamp,
     bool wantConsoleLog = true,
@@ -115,7 +103,7 @@ class LoggerUtility {
   /// The `_bindLogStreamListener` method establishes a connection with the logs isolate
   /// by using the provided [logsIsolateSendPort] and sets up a listener to receive log events.
   ///
-  /// [logsIsolateSendPort]: The send port used to communicate with the logs isolate.
+  /// - [logsIsolateSendPort]: The send port used to communicate with the logs isolate.
   void _bindLogStreamListener(
     SendPort logsIsolateSendPort,
   ) {
@@ -126,35 +114,6 @@ class LoggerUtility {
   }
 
   /// Logs a message with the specified type, tag, and content.
-  ///
-  /// The `logMessage` method is used to log messages with a specific [type], associated
-  /// [tag], and [message] content. It supports optional [subTag] and [stackTrace]
-  /// parameters for more detailed logging. The logged message is consolidated based on
-  /// the provided parameters and then logged to the console and, if enabled, to a log file.
-  ///
-  /// - Parameters:
-  ///   - type: The type of the log message, such as [LogType.info], [LogType.warning],
-  ///     [LogType.error], or [LogType.severe].
-  ///   - tag: A tag or identifier associated with the log message.
-  ///   - message: The content of the log message.
-  ///   - subTag: Optional. A sub-tag or secondary identifier for more specific logging.
-  ///   - stackTrace: Optional. A stack trace associated with the log message..
-  ///
-  /// Example usage:
-  ///
-  /// ```dart
-  /// await logMessage(
-  ///   type: LogType.error,
-  ///   tag: "Network",
-  ///   message: "Failed to establish a connection.",
-  ///   subTag: "API Request",
-  ///   stackTrace: errorStackTrace,
-  /// );
-  /// ```
-  ///
-  /// See also:
-  /// - [LogType], an enum representing different types of log messages.
-  ///
   Future<void> logMessage({
     required LogType type,
     required String tag,
@@ -188,20 +147,6 @@ class LoggerUtility {
   }
 
   /// Generates a consolidated log message based on the provided parameters.
-  ///
-  /// The log message includes timestamp, log type tag, tag, optional subTag,
-  /// main message, and optional stack trace information.
-  ///
-  /// Parameters:
-  /// - [type]: The type of the log message (e.g., error, info, debug).
-  /// - [tag]: The tag associated with the log message.
-  /// - [message]: The main message to be logged.
-  /// - [subTag]: An optional sub-tag to provide additional context. Defaults to null.
-  /// - [stackTrace]: An optional stack trace associated with the log message. Defaults to null.
-  ///
-  /// Returns:
-  /// A consolidated log message formatted as follows:
-  /// 'timestamp : logTypeTag : tag : subTag : message : stackTrace'
   String _generateConsolidatedLog({
     required LogType type,
     required String tag,

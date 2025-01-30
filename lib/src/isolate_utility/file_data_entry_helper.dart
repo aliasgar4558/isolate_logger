@@ -19,5 +19,5 @@ Future<String> _fileNameToLogMessageInto({
   String formattedDate = _logFileDateFormat.format(DateTime.now());
 
   // Combine the formatted date and the prefix to create the log file name
-  return '${fileNamePrefix}_$formattedDate.txt';
+  return '${fileNamePrefix}_$formattedDate.log';
 }

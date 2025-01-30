@@ -1,3 +1,8 @@
+## 1.0.7
+
+- Code optimisations & documentation updated.
+- Upgraded package dependencies.
+
 ## 1.0.6
 
 - FIX : "Bad state: Stream has already been listened to."

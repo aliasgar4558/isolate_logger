@@ -37,10 +37,7 @@ class LogServiceImpl implements ILogService {
     required String message,
   }) async {
     // Create a File object from the provided file path
-    File file = File(path.join(
-      (await appLogsDirectory).path,
-      fileName,
-    ));
+    File file = File(path.join((await appLogsDirectory).path, fileName));
 
     // If the file does not exist, create it
     if (!file.existsSync()) {
