@@ -1,5 +1,16 @@
 # Isolate Logger
 
+![coverage][coverage_badge]
+[![The 3-Clause BSD License][license_badge]][license_link]
+[![Pub.dev - Isolate Logger][pub_pkg_badge]][pub_pkg_link]
+
+#### Supported Platforms.
+![Android][android_badge]
+![iOS][ios_badge]
+![macOS][macos_badge]
+![Linux][linux_badge]
+![Windows][windows_badge]
+
 `Isolate Logger` is a dart based flutter package utility designed to simplify logging messages into the console and files. It aids developers in tracking user events, exceptions, and other relevant information within their flutter applications.
 With Isolate Logger, you can efficiently monitor your application's behavior, identify issues, and improve user experience.
 
@@ -77,4 +88,13 @@ IsolateLogger.instance.clearLogsFor(DateTime.now().subtract(
 - **Error** : `any error or exception - also has stackTrace as optional param`
 - **Severe** : `any severe exception - also has stackTrace as optional param`
 
-
+[coverage_badge]: coverage_badge.svg
+[license_badge]: https://img.shields.io/badge/license-bsd-3.svg
+[license_link]: https://opensource.org/license/bsd-3-clause
+[android_badge]: https://img.shields.io/badge/Android-808080
+[ios_badge]: https://img.shields.io/badge/iOS-808080
+[macos_badge]: https://img.shields.io/badge/macOS-808080
+[linux_badge]: https://img.shields.io/badge/Linux-808080
+[windows_badge]: https://img.shields.io/badge/Windows-808080
+[pub_pkg_badge]: https://img.shields.io/badge/pub.dev-isolate_logger-blue
+[pub_pkg_link]: https://pub.dev/packages/isolate_logger
