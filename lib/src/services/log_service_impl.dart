@@ -115,7 +115,7 @@ class LogServiceImpl implements ILogService {
 
           final ZipEncoder encoder = ZipEncoder();
           final encodedArchive = encoder.encode(archive);
-          if (encodedArchive != null && encodedArchive.isNotEmpty) {
+          if (encodedArchive.isNotEmpty) {
             // common file name is extracted for reuse
             final zipFileNameWithoutPrefix =
                 "${DateFormat(kZipFileNameDateFormat).format(DateTime.now())}.zip";
