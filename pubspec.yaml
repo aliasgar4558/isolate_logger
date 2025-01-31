@@ -4,7 +4,6 @@ version: 1.0.7
 homepage: https://github.com/aliasgar4558/isolate_logger
 repository: https://github.com/aliasgar4558/isolate_logger
 issue_tracker: https://github.com/aliasgar4558/isolate_logger/issues
-publish_to: "https://pub.dev"
 
 environment:
   sdk: '>=3.5.0 <4.0.0'
