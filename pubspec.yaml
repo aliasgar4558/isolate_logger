@@ -30,3 +30,9 @@ platforms:
   linux:
   macos:
   windows:
+
+topics:
+  - logger
+  - storage
+  - console
+  - export
