@@ -1,3 +1,8 @@
+## 1.0.8
+
+- Readme.md updated.
+- Package topics updated.
+
 ## 1.0.7
 
 - Code optimisations & documentation updated.

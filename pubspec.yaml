@@ -1,6 +1,6 @@
 name: isolate_logger
 description: A logger utility for logging messages into console & in files, which will help users to track for any user events/exceptions etc.
-version: 1.0.7
+version: 1.0.8
 homepage: https://github.com/aliasgar4558/isolate_logger
 repository: https://github.com/aliasgar4558/isolate_logger
 issue_tracker: https://github.com/aliasgar4558/isolate_logger/issues
@@ -31,6 +31,7 @@ platforms:
   windows:
 
 topics:
+  - isolate
   - logger
   - storage
   - console

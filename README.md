@@ -48,7 +48,7 @@ IsolateLogger.instance.initLogger(
 ```
 
 ``` dart
-// Use this method to log info.
+// Use this method to log info. [Check other types as well for logging effectively]
 IsolateLogger.instance.logInfo(
     tag: "{tag here}",
     message: "{message here}",
@@ -83,14 +83,20 @@ IsolateLogger.instance.clearLogsFor(DateTime.now().subtract(
 
 ## Logger message types :
 
-- **Information** : `simple message`
+- **Information** : `any information like app events/navigation info etc`
 - **Warning** : `any warnings that needs to be logged`
 - **Error** : `any error or exception - also has stackTrace as optional param`
-- **Severe** : `any severe exception - also has stackTrace as optional param`
+- **Severe** : `any severe exception - with mandatory stackTrace to log`
+
+
+## 💡 Feedback & Contributions
+I’d love to hear your feedback on this package! If you encounter any bugs or have feature requests, please [open an issue](https://github.com/aliasgar4558/isolate_logger/issues).
+
+If you’d like to contribute, feel free to fork the repo, make your improvements, and submit a pull request. Let’s build something amazing together! 🚀
 
 [coverage_badge]: coverage_badge.svg
 [license_badge]: https://img.shields.io/badge/license-bsd-3.svg
-[license_link]: https://opensource.org/license/bsd-3-clause
+[license_link]: https://pub.dev/packages/isolate_logger/license
 [android_badge]: https://img.shields.io/badge/Android-808080
 [ios_badge]: https://img.shields.io/badge/iOS-808080
 [macos_badge]: https://img.shields.io/badge/macOS-808080
