@@ -1,6 +1,6 @@
 name: isolate_logger
-description: A logger utility for logging messages into console & in files, which will help users to track for any user events/exceptions etc.
-version: 1.0.8
+description: A logger utility that uses Isolates under the hood, that logs messages to the console and files, helping users track user events, exceptions, and other relevant activities.
+version: 1.0.9
 homepage: https://github.com/aliasgar4558/isolate_logger
 repository: https://github.com/aliasgar4558/isolate_logger
 issue_tracker: https://github.com/aliasgar4558/isolate_logger/issues
@@ -11,10 +11,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  path: ^1.9.0
+  path: ^1.9.1
   path_provider: ^2.1.5
   intl: ^0.20.2
-  archive: ^4.0.2
+  archive: ^4.0.3
 
 dev_dependencies:
   flutter_test:

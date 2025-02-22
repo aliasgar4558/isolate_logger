@@ -1,8 +1,8 @@
-# Isolate Logger
+# IsolateLogger
 
 ![coverage][coverage_badge]
 [![The 3-Clause BSD License][license_badge]][license_link]
-[![Pub.dev - Isolate Logger][pub_pkg_badge]][pub_pkg_link]
+[![Pub.dev - IsolateLogger][pub_pkg_badge]][pub_pkg_link]
 
 #### Supported Platforms.
 ![Android][android_badge]
@@ -11,8 +11,8 @@
 ![Linux][linux_badge]
 ![Windows][windows_badge]
 
-`Isolate Logger` is a dart based flutter package utility designed to simplify logging messages into the console and files. It aids developers in tracking user events, exceptions, and other relevant information within their flutter applications.
-With Isolate Logger, you can efficiently monitor your application's behavior, identify issues, and improve user experience.
+`IsolateLogger` is a dart based flutter package utility (which uses **Isolates** under the hood) designed to simplify logging messages into the console and files. It aids developers in tracking user events, exceptions, and other relevant information within their flutter applications.
+With IsolateLogger, you can efficiently monitor your application's behavior, identify issues, and improve user experience.
 
 ## Features :
 
@@ -25,7 +25,7 @@ With Isolate Logger, you can efficiently monitor your application's behavior, id
 
 ## Installation :
 
-To use Isolate Logger in your Flutter project, add the following dependency to your `pubspec.yaml` file:
+To use IsolateLogger in your Flutter project, add the following dependency to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:

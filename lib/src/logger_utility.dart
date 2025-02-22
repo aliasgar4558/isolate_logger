@@ -3,14 +3,12 @@ import 'dart:developer';
 import 'dart:isolate';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:isolate_logger/src/enum/logs_export_type.dart';
+import 'package:isolate_logger/isolate_logger.dart';
 import 'package:isolate_logger/src/helper/extension/log_time_format_extension.dart';
 import 'package:isolate_logger/src/helper/extension/string_extension.dart';
 import 'package:isolate_logger/src/services/log_service.dart';
 
-import 'enum/log_time_format.dart';
 import 'enum/log_type.dart';
 import 'helper/constants.dart';
 import 'isolate_utility/log_isolate_entry_point.dart';
@@ -46,6 +44,10 @@ class LoggerUtility {
     bool logSystemCrashes = true,
     String logFileNamePrefix = kDefaultLogFileNamePrefix,
   }) {
+    if (kIsWeb) {
+      throw WebNotSupportedException();
+    }
+
     _timeFormat = timeFormat;
     _wantConsoleLog = wantConsoleLog;
     _wantFileLogEntry = logIntoFile;
@@ -121,6 +123,10 @@ class LoggerUtility {
     String? subTag,
     StackTrace? stackTrace,
   }) async {
+    if (kIsWeb) {
+      throw WebNotSupportedException();
+    }
+
     String consolidatedLog = _generateConsolidatedLog(
       type: type,
       tag: tag,
@@ -191,26 +197,46 @@ class LoggerUtility {
   }
 
   /// Clears all logs from the log storage asynchronously.
-  FutureOr<void> clearAllLogs() => _logService.clearAllLogs();
+  FutureOr<void> clearAllLogs() {
+    if (kIsWeb) {
+      throw WebNotSupportedException();
+    }
+
+    return _logService.clearAllLogs();
+  }
 
   /// Exports the logs from the log storage asynchronously.
   FutureOr<String?> exportLogs({
     required LogsExportType type,
     String? logZipFilePrefix,
-  }) =>
-      _logService.exportLogFiles(
-        type,
-        logZipFilePrefix: logZipFilePrefix,
-      );
+  }) {
+    if (kIsWeb) {
+      throw WebNotSupportedException();
+    }
+
+    return _logService.exportLogFiles(
+      type,
+      logZipFilePrefix: logZipFilePrefix,
+    );
+  }
 
   FutureOr<void> clearLogsBefore(
     int days,
-  ) =>
-      _logService.clearLogsBefore(days: days);
+  ) {
+    if (kIsWeb) {
+      throw WebNotSupportedException();
+    }
+
+    return _logService.clearLogsBefore(days: days);
+  }
 
   // coverage:ignore-start
   /// Disposes resources associated with the event logging functionality.
   void dispose() {
+    if (kIsWeb) {
+      throw WebNotSupportedException();
+    }
+
     _logsStreamSub?.cancel();
     _logsStreamController?.close();
     _eventLoggerIsolate?.kill();

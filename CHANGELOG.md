@@ -1,3 +1,8 @@
+## 1.0.9
+
+- Exception handling improved.
+- Updated package branding & documentation.
+
 ## 1.0.8
 
 - Readme.md updated.

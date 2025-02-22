@@ -20,7 +20,7 @@ class IsolateLogger {
     );
   }
 
-  /// Singleton instance of the RSPLLogger class.
+  /// Singleton instance of the IsolateLogger class.
   static final IsolateLogger instance = IsolateLogger._();
 
   /// Initializes the logger with specified configurations.
@@ -30,6 +30,8 @@ class IsolateLogger {
   /// - [logIntoFile]: Whether to log messages into a file. Defaults to `true`.
   /// - [logSystemCrashes]: Whether to log system crashes. Defaults to `true`.
   /// - [logFileNamePrefix]: The prefix for log file names. Defaults to `kDefaultLogFileNamePrefix`.
+  ///
+  /// Throws [WebNotSupportedException] when executed on web platform.
   void initLogger({
     LogTimeFormat timeFormat = LogTimeFormat.timestamp,
     bool wantConsoleLog = true,
@@ -59,6 +61,8 @@ class IsolateLogger {
   /// logInfo(tag: "Network", message: "API request successful");
   /// logInfo(tag: "Auth", subTag: "Login", message: "User logged in");
   /// ```
+  ///
+  /// Throws [WebNotSupportedException] when executed on web platform.
   void logInfo({
     required String tag,
     required String message,
@@ -89,6 +93,8 @@ class IsolateLogger {
   ///   logError(tag: "Database", message: e.toString(), stackTrace: stackTrace);
   /// }
   /// ```
+  ///
+  /// Throws [WebNotSupportedException] when executed on web platform.
   void logError({
     required String tag,
     required String message,
@@ -121,6 +127,8 @@ class IsolateLogger {
   ///   logSevere(tag: "System", message: e.toString(), stackTrace: stackTrace);
   /// }
   /// ```
+  ///
+  /// Throws [WebNotSupportedException] when executed on web platform.
   void logSevere({
     required String tag,
     required String message,
@@ -150,6 +158,8 @@ class IsolateLogger {
   /// logWarning(tag: "Network", message: "Slow response time detected");
   /// logWarning(tag: "Auth", subTag: "Token", message: "JWT token is close to expiration");
   /// ```
+  ///
+  /// Throws [WebNotSupportedException] when executed on web platform.
   void logWarning({
     required String tag,
     required String message,
@@ -173,6 +183,8 @@ class IsolateLogger {
   /// ```dart
   /// await clearAllLogs();
   /// ```
+  ///
+  /// Throws [WebNotSupportedException] when executed on web platform.
   Future<void> clearAllLogs() async => await _utility.clearAllLogs();
 
   /// Exports the log files based on the given [exportType].
@@ -195,6 +207,8 @@ class IsolateLogger {
   ///   print("Logs exported to: $exportedPath");
   /// }
   /// ```
+  ///
+  /// Throws [WebNotSupportedException] when executed on web platform.
   FutureOr<String?> exportLogs({
     required LogsExportType exportType,
     String? logZipFilePrefix,
@@ -208,6 +222,8 @@ class IsolateLogger {
   ///
   /// It will clear all [ZIP] files which are stored.
   /// It will clear all [TXT] (log files) modified before given no. of days.
+  ///
+  /// Throws [WebNotSupportedException] when executed on web platform.
   Future<void> clearLogsBefore(int days) async =>
       await _utility.clearLogsBefore(days);
 
@@ -216,5 +232,7 @@ class IsolateLogger {
   /// The `dispose` method is responsible for releasing and disposing of resources
   /// used by the logger utility. It should be called when the logger is no longer needed
   /// to ensure proper cleanup of resources.
+  ///
+  /// Throws [WebNotSupportedException] when executed on web platform.
   void dispose() => _utility.dispose();
 }
